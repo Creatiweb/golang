@@ -5,6 +5,8 @@ LABEL Mantainer=Creatiweb
 # Install golint
 ENV GOPATH /go
 ENV PATH ${GOPATH}/bin:$PATH
+# set CC env var for CLANG
+ENV CC clang-6.0
 RUN go get -u github.com/golang/lint/golint
 
 # Add apt key for LLVM repository
