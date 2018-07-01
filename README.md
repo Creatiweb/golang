@@ -1,0 +1,1 @@
+golang official image with CLANG for Memory sanitizer (-msan) and golint
