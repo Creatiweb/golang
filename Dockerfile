@@ -19,6 +19,9 @@ RUN apt-get install -y --no-install-recommends clang-6.0
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# install dep
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+
 # Set Clang as default CC
 ENV set_clang /etc/profile.d/set-clang-cc.sh
 RUN echo "export CC=clang-6.0" | tee -a ${set_clang} && chmod a+x ${set_clang}
